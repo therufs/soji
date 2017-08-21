@@ -64,12 +64,11 @@ fi
 meeting_count=`cat $todays_note_file 2> /dev/null | grep -i "** meeting" | wc -l`
 meetings="$WHITE meetings $GREEN $meeting_count"
 
-#echo "$journal $meditation $lunch $poms $meetings"
-#from Gary Bernhart
-gitbranch=""
-ref="$(git branch 2> /dev/null | sed -n "/*/ p" | awk '{ print $2 }')"
-if [ -n "$ref" ]; then
-  gitbranch="("${ref#refs/heads/}")"
-fi  
+##from Gary Bernhart
+#gitbranch=""
+#ref="$(git branch 2> /dev/null | sed -n "/*/ p" | awk '{ print $2 }')"
+#if [ -n "$ref" ]; then
+#  gitbranch="("${ref#refs/heads/}")"
+#fi  
 
 printf "$journal $meditation $lunch $exercise\n$poms $meetings $waters\n$RED $(soji status)\n"
