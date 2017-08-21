@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+soji log "exercise" "$1"
