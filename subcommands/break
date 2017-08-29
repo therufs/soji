@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 soji dim
-soji log "break" "break"
+soji log "break" "${1:-break}"
 
 os_x=`uname -a | fgrep -i 'Darwin'`
 if [ "$os_x" != "" ]; then
