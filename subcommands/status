@@ -9,7 +9,9 @@ if [ "$os_x" != "" ]; then
         if [ "$start_time" != "" ]; then
             seconds=`expr $(date +'%s') - $(date -jf '%I:%M%p' $start_time +'%s')`
             minutes=`expr $seconds / 60`
-            echo "$task -- $minutes min"
+            if (($minutes < 40)); then
+              echo "$task -- $minutes min"
+            fi
         fi
     fi
 else
