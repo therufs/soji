@@ -9,6 +9,7 @@ YELLOW=$ESC_SEQ"1;33m"
 GREEN=$ESC_SEQ"1;32m"
 WHITE=$ESC_SEQ"1;97m"
 BLUE=$ESC_SEQ"1;34m"
+AQUA=$ESC_SEQ"1;36m"
 NOCOLOR="$ESC_SEQ\1;0m"
 
 todays_note_file=`soji note-path log`
@@ -73,4 +74,4 @@ meetings="$WHITE meetings $GREEN $meeting_count"
 #  gitbranch="("${ref#refs/heads/}")"
 #fi  
 
-printf "$journal $meditation $lunch $exercise\n$poms $meetings $waters\n$RED $(soji status)\n"
+printf "$journal $meditation $lunch $exercise\n$poms $meetings $waters\n$AQUA $(soji status)\n"
