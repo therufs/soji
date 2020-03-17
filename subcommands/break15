@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+#soji dim
+soji log "break" "${1:-break}"
+
+os_x=`uname -a | fgrep -i 'Darwin'`
+if [ "$os_x" != "" ]; then
+#    crontab -l | { cat; echo "`date -v +15M +'%M %H %d %m *'` soji bright"; } | crontab -
+    crontab -l | { cat; echo "`date -v +15M +'%M %H %d %m *'` soji notify 'Break over!'"; } | crontab -
+else
+    crontab -l | { cat; echo "`date +'%M %H %d %m *' --date '+15 min'` soji bright"; } | crontab -
+fi
+
