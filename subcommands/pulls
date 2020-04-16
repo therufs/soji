@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+pulls=${1:-pulls}
+soji log "pulls" $pulls

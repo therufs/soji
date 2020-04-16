@@ -62,6 +62,14 @@ else
   exercise="$WHITE exercise $RED[✘]"
 fi
 
+pulls=""
+cat $todays_note_file 2> /dev/null | grep -i "** pulls" &> /dev/null
+if [[ $? == 0 ]]; then
+  pulls="$WHITE pulls $GREEN[✔]"
+else
+  pulls="$WHITE pulls $RED[✘]"
+fi
+
 meeting_count=`cat $todays_note_file 2> /dev/null | grep -i "** meeting" | wc -l`
 meetings="$WHITE meetings $GREEN $meeting_count"
 
@@ -72,4 +80,4 @@ meetings="$WHITE meetings $GREEN $meeting_count"
 #  gitbranch="("${ref#refs/heads/}")"
 #fi  
 
-printf "$journal $meditation $lunch $exercise\n$poms $meetings $waters\n$AQUA $(soji status)\n"
+printf "$pulls $lunch $exercise\n$poms $meetings $waters\n$AQUA $(soji status)\n"
